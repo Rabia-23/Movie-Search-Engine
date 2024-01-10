@@ -1,0 +1,230 @@
+body {
+   margin: 0;
+   padding-top: 130px;
+   padding-left: 128px;
+   padding-right: 24px;
+   background-color: rgb(224, 205, 230);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.header {
+   height: 105px;
+   display: flex;
+   flex-direction: row; /*nasil siralanacagini gosterir (sutun sutun)*/
+   justify-content: left;
+   align-items: center;
+
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   background-color: rgb(167, 167, 167);
+
+   border-bottom-width: 1px;
+   border-bottom-style: solid;
+   border-bottom-color: rgb(224, 205, 230) ;
+
+   z-index: 100;
+}
+
+.site_name_div {
+   padding-left: 5px;
+   margin-left: 450px;
+}
+
+.logo_div {
+   margin-right: 33px;
+   padding-left: 15px;
+   width: 95px;
+   height: 100px;
+}
+
+#logo_icon {
+   height: 100%;
+   width: 100%;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.sidebar {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 112px;
+   top: 105px;
+
+   background-color: rgb(167, 167, 167);
+
+   z-index: 200; /*diger indextekilerin ustune cikmasini saglayacak sayi daha buyukse ustune cikar*/
+}
+
+.sidebar_link {
+   height: 74px;
+
+   display: flex;
+   flex-direction: column; /*satir satir siralanmasini saglar*/
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+
+   padding-left: 7px;
+   margin-bottom: 27px;
+   margin-top: 23px;
+
+   transition: 0.5s;
+
+   position: relative;
+}
+
+.sidebar_link:hover {
+   background-color: rgb(235, 235, 235);
+   border-radius: 53px;
+}
+
+.icon {
+   width: 57px;
+   height: 57px;
+}
+
+
+#tooltipText {
+   position: absolute;
+   left: 50%;
+   bottom: 0;
+   transform: translateX(-50%);
+   white-space: nowrap;
+   visibility: hidden;
+   opacity: 0;
+   transition: opacity 0.7s ease;
+}
+
+#tooltipText::before {
+   content: '';
+   position: absolute;
+   left: 50%;
+   top: 100%;
+   transform: translateX(-50%);
+}
+
+.sidebar_link:hover #tooltipText {
+   bottom: -33%;
+   visibility: visible;
+   opacity: 1;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.accordion li {
+   list-style: none;
+   width: 237px;
+   border-radius: 8px;
+   background: rgb(212, 132, 62);
+   margin-bottom: 13px;
+}
+
+.accordion li .accordion_label {
+   display: flex;
+   align-items: center;
+   padding: 10px;
+   font-size: 18px;
+   font-weight: 500;
+   cursor: pointer;
+}
+
+.accordion_label::before {
+   content: '+';
+   margin-right: 10px;
+   font-size: 24px;
+   font-weight: 600;
+}
+
+input[type="radio"] {
+   display: none;
+}
+
+.accordion #content {
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 0.5s, padding 0.5s;
+}
+
+.accordion input[type="radio"]:checked + .accordion_label + #content {
+   max-height: 400px;
+   padding: 10px 10px 20px;
+}
+
+.accordion input[type="radio"]:checked + .accordion_label::before {
+   content: '-';
+}
+
+.accordion_label:hover {
+   color: rgb(77, 73, 73);
+}
+
+.checkboxes input[type="checkbox"]:checked {
+   accent-color: rgb(77, 73, 73);
+}
+
+
+.search_button {
+   margin-top: 10px;
+   border-radius: 13px;
+   border: solid 3px orange;
+   width: 83px;
+   height: 37px;
+   background-color: rgb(241, 193, 103);
+
+   transition: 0.15s;
+}
+
+.search_button:hover {
+   background-color: gray;
+   border: solid 3px rgb(182, 139, 196);
+   color: orange;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`*/
+
+.movie_grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   column-gap: 65px;
+   row-gap: 83px;
+}
+
+.movie_card {
+   height: 320px;
+   width: 216px;
+   border: 1px solid gray;
+}
+
+.poster {
+   height: 320px;
+   width: 216px;
+}
+
+
+@media (max-width: 610px) { /*sayfanin genisligi 610 ve 610 px'den kucuk oldugunda videolar tekli siralanacak*/
+   .movie_grid {
+      grid-template-columns: 1fr;
+   }
+}
+
+@media (min-width: 611px) and (max-width: 880px) {
+   .movie_grid {
+      grid-template-columns: 1fr 1fr;
+   }
+}
+
+@media (min-width: 881px) and (max-width: 1199px) {
+   .movie_grid {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+}
+
+@media (min-width: 1200px) {
+   .movie_grid {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+   }
+}

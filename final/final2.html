@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Movie Search Engine</title>
+      <link rel="stylesheet" href="final2.css">
+   </head>
+
+   <body>
+
+      <!--HEADER START-->
+
+      <div class="header">
+
+         <div class="logo_div">
+            <a href="http://127.0.0.1:5500/projects/final/final2.html">
+               <img class="icon" id="logo_icon" src="icons/movies.png" alt="">
+               cons created by Smashicons - Flaticon</a>-->
+            </a>
+         </div>
+
+         <div class="site_name_div">
+            <h2>MOVIE SEARCH ENGINE</h2>
+         </div>
+
+      </div>
+
+      <!--HEADER END-->
+
+
+      <!--SIDEBAR START-->
+
+      <div class="sidebar">
+
+         <div class="sidebar_link">
+            <a href="https://www.imdb.com/chart/top/" target="_blank">
+               <img class="icon" src="icons/watching-a-movie.png" alt="">
+               <!--<a href="https://www.flaticon.com/free-icons/watching-a-movie" title="watching-a-movie icons">Watching-a-movie icons created by iconixar - Flaticon</a>-->
+            </a>
+            <span id="tooltipText">Top 250 Movies</span>
+         </div>
+
+         <div class="sidebar_link">
+            <a href="https://www.imdb.com/list/ls000004615/" target="_blank">
+               <img class="icon" src="icons/actor.png" alt="">
+               <!--<a href="https://www.flaticon.com/free-icons/actor" title="actor icons">Actor icons created by Eucalyp - Flaticon</a>-->
+            </a>
+            <span id="tooltipText">Best Actors</span>
+         </div>
+
+         <div class="sidebar_link">
+            <a href="https://www.imdb.com/list/ls000004391/?ref_=otl_5" target="_blank">
+               <img class="icon" src="icons/actress.png" alt="">
+               <!--<a href="https://www.flaticon.com/free-icons/actress" title="actress icons">Actress icons created by Eucalyp - Flaticon</a>-->
+            </a>
+            <span id="tooltipText">Best Actresses</span>
+         </div>
+
+         <div class="sidebar_link">
+            <a href="https://www.imdb.com/list/ls000004664/?ref_=otl_2" target="_blank">
+               <img class="icon" src="icons/chair.png" alt="">
+               <!--<a href="https://www.flaticon.com/free-icons/actor" title="actor icons">Actor icons created by Freepik - Flaticon</a>-->
+            </a>
+            <span id="tooltipText">Best Directors</span>
+         </div>
+
+      </div>
+
+      <!--SIDEBAR END-->
+
+      <!--COUNTRY START-->
+      <!--
+      <div class="countries">
+     
+         <input id="US" class="US" type="checkbox" value="us" onclick="
+            selectedCountries('US')"/>
+         <label for="US">US</label>
+
+         <br>
+
+         <input id="Sweden" class="Sweden" type="checkbox" value="sweden" onclick="
+            selectedCountries('Sweden')"/>
+         <label for="Sweden">Sweden</label>
+
+         <br>
+
+         <input id="England" class="England" type="checkbox" value="england" onclick="
+            selectedCountries('England')"/>
+         <label for="England">England</label>
+         
+      </div>
+
+      <br>
+      <br>
+      -->
+      <!--COUNTRY END-->
+
+      <div class="selection_container">
+
+         <ul class="accordion">
+
+               <!--CHECKBOX START-->
+            <li>
+               <input type="radio" name="accordion" id="first">
+               <label class="accordion_label" for="first"><b>Genres</b></label>
+
+               <div class="checkboxes" id="content">
+            
+                  <input id="checkbox_horror" class="checkbox_horror" type="checkbox" value="horror" onclick="
+                        selectedGenres('checkbox_horror');"/>
+                  <label for="checkbox_horror">Horror</label>
+
+                  <br>
+
+                  <input id="checkbox_romance" class="checkbox_romance" type="checkbox" value="romance" onclick="
+                        selectedGenres('checkbox_romance');"/>
+                  <label for="checkbox_romance">Romance</label>
+
+                  <br>
+
+                  <input id="checkbox_drama" class="checkbox_drama" type="checkbox" value="drama" onclick="
+                        selectedGenres('checkbox_drama');"/>
+                  <label for="checkbox_drama">Drama</label>
+                  
+                  <br>
+
+                  <input id="checkbox_sci-fi" class="checkbox_sci-fi" type="checkbox" value="sci-fi" onclick="
+                        selectedGenres('checkbox_sci-fi');"/>
+                  <label for="checkbox_sci-fi">Sci-fi</label>
+
+                  <br>
+
+                  <input id="checkbox_thriller" class="checkbox_thriller" type="checkbox" value="thriller" onclick="
+                        selectedGenres('checkbox_thriller');"/>
+                  <label for="checkbox_thriller">Thriller</label>
+
+                  <br>
+
+                  <input id="checkbox_action" class="checkbox_action" type="checkbox" value="action" onclick="
+                        selectedGenres('checkbox_action');"/>
+                  <label for="checkbox_action">Action</label>
+
+                  <br>
+
+                  <input id="checkbox_adventure" class="checkbox_adventure" type="checkbox" value="adventure" onclick="
+                        selectedGenres('checkbox_adventure');"/>
+                  <label for="checkbox_adventure">Adventure</label>
+
+                  <br>
+
+                  <input id="checkbox_crime" class="checkbox_crime" type="checkbox" value="crime" onclick="
+                        selectedGenres('checkbox_crime');"/>
+                  <label for="checkbox_crime">Crime</label>
+
+                  <br>
+
+                  <input id="checkbox_comedy" class="checkbox_comedy" type="checkbox" value="comedy" onclick="
+                        selectedGenres('checkbox_comedy');"/>
+                  <label for="checkbox_comedy">Comedy</label>
+
+                  <br>
+
+                  <input id="checkbox_biography" class="checkbox_biography" type="checkbox" value="biography" onclick="
+                        selectedGenres('checkbox_biography');"/>
+                  <label for="checkbox_biography">Biography</label>
+
+                  <br>
+
+                  <input id="checkbox_history" class="checkbox_history" type="checkbox" value="history" onclick="
+                        selectedGenres('checkbox_history');"/>
+                  <label for="checkbox_history">History</label>
+
+                  <br>
+
+                  <input id="checkbox_fantasy" class="checkbox_fantasy" type="checkbox" value="fantasy" onclick="
+                        selectedGenres('checkbox_fantasy');"/>
+                  <label for="checkbox_fantasy">Fantasy</label>
+
+                  <br>
+
+                  <input id="checkbox_mystery" class="checkbox_mystery" type="checkbox" value="mystery" onclick="
+                        selectedGenres('checkbox_mystery');"/>
+                  <label for="checkbox_mystery">Mystery</label>
+
+                  <br>
+
+                  <input id="checkbox_sport" class="checkbox_sport" type="checkbox" value="sport" onclick="
+                        selectedGenres('checkbox_sport');"/>
+                  <label for="checkbox_sport">Sport</label>
+
+                  <br>
+
+                  <input id="checkbox_family" class="checkbox_family" type="checkbox" value="family" onclick="
+                        selectedGenres('checkbox_family');"/>
+                  <label for="checkbox_family">Family</label>
+
+                  <br>
+
+                  <input id="checkbox_war" class="checkbox_war" type="checkbox" value="war" onclick="
+                        selectedGenres('checkbox_war');"/>
+                  <label for="checkbox_war">War</label>
+
+                  <br>
+
+                  <input id="checkbox_documentary" class="checkbox_documentary" type="checkbox" value="documentary" onclick="
+                        selectedGenres('checkbox_documentary');"/>
+                  <label for="checkbox_documentary">Documentary</label>
+
+               </div>
+
+                  <br>
+                  <br>
+            </li>
+               <!--CHECKBOX END-->   
+
+
+               <!--YEAR START-->
+            <li>
+               <input type="radio" name="accordion" id="second">
+               <label class="accordion_label" for="second"><b>Year</b></label>
+
+               <div class="year_range" id="content">
+
+                  <div class="field">
+                     <label for="min-year">Min</label>
+                     <input type="number" id="min-year" class="min-year" placeholder="Min Year" min="1950" max="2023" value="1950">
+                  </div>
+
+                  <div class="separator">&dash;</div>
+
+                  <div class="filed">
+                     <label for="max-year">Max</label>
+                     <input type="number" id="max-year" class="max-year" placeholder="Max Year" min="1950" max="2023" value="2023">
+                  </div>
+
+               </div>
+               <br>
+               <br>
+            </li>
+               <!--YEAR END-->
+
+
+               <!--IMDB START-->
+            <li>
+               <input type="radio" name="accordion" id="third">
+               <label class="accordion_label" for="third"><b>IMDB</b></label>
+
+               <div class="imdb_range" id="content">
+
+                  <input type="range" class="min-imdb" min="0" max="10" value="0">
+                  <input type="range" class="max-imdb" min="0" max="10" value="10">
+
+               </div>
+            </li>
+               <!--IMDB END-->
+
+
+               <!--BUTTON START-->
+
+               <button class="search_button" onclick="
+                     titlesCWGenres();
+                     titlesCWYears();
+                     titlesCWImdb();
+                     newPage();
+                     
+                  "
+                  ><b>Search</b></button>
+
+               <!--BUTTON END-->
+         </ul>
+      </div>
+
+
+      <!--POSTERS START-->
+
+      <div class="movie_grid">
+      
+      <!--POSTERS END-->
+      
+
+      </div>
+
+
+      <script src="final2.js"></script>
+
+   </body>
+</html>
